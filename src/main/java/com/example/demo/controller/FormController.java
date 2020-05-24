@@ -28,18 +28,37 @@ public class FormController {
 	@RequestMapping("/")
 	public String form(Model model) {
 
-		// ① DB よりイベントの情報を取得する
+		// ① DB よりイベントの情報を取得する	
 		// 掲示板の投稿内容を取得する
 		List<BordDto> bordInfoList = bordDao.findAll();
 		
-		// ② トップに出す滋賀北部、京都北部、大阪北部のイベント情報を保持するリストを作成する
+		
+		// ② トップに出す滋賀北部、京都北部、大阪北部のイベント情報を保持するリストを作成する		
 		// 滋賀北部のメンバー募集情報
-		ArrayList<TopEventInterface> shiganorthEventList = new ArrayList<>();
-		EventList = new ArrayList<>();
+		ArrayList<BordContentInterface> shiganorthContentList = new ArrayList<>();
+		
 		// 京都北部のメンバー募集情報
-		ArrayList<TopEventInterface> kyoutonorthEventList = new ArrayList<>();
+		ArrayList<BordContentInterface> kyotonorthContentList = new ArrayList<>();
+		
 		// 大阪北部のメンバー募集情報
-		ArrayList<TopEventInterface> osakanorthEventList = new ArrayList<>();
+		ArrayList<BordContentInterface> osakanorthContentList = new ArrayList<>();
+		
+		
+		// ③ 取得したイベント情報をもとに②で作成したリストに格納
+		for(BordDto bord:bordInfoList) {
+			if(bord.getBord_id() == SHIGA_NORTH_NO) {
+				shigaNorthList.add(bord);
+			} else if (bord.getBord_id() == KYOTO_NORTH_NO) {
+				kyotoNorthList.add(bord);
+			} else {
+				osakaNorthList.add(bord);
+			}
+		}
+		
+		// ④ HTML（フロント）に渡す
+		model.addAttribute("shiganorthList", shigaNorthList);
+		model.addAttribute("kyotonorthList", kyotoNorthList);
+		model.addAttribute("osakanorthList", osakaNorthList);
 
 
 		return "form";
