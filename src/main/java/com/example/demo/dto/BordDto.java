@@ -26,6 +26,10 @@ public class BordDto {
 	// 投稿内容
 	@Column
 	private String content;
+	
+	// 投稿URL
+	@Column
+	private String href_url;
 
 
 	// 投稿日時
@@ -61,6 +65,13 @@ public class BordDto {
 		this.content = content;
 	}
 
+	public String getHref_url() {
+		return href_url;
+	}
+
+	public void setHref_url(String href_url) {
+		this.href_url = href_url;
+	}
 
 	public Date getPosted_at() {
 		return posted_at;

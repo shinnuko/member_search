@@ -9,3 +9,48 @@
 </form>
 
 <a href="http://blue-ms.com/">滋賀南部のおすすめスタジオ</a>
+
+<div class="info">
+  <div class="info-main">
+    <!-- 滋賀北部情報 -->
+    <div class="news">
+      <h1>滋賀北部新着情報</h1>
+      <ul th:each="shigaNorth:${shiganorthlist}">
+        <li>
+          <a th:href="${shigaNorth.shiganorthUrl}">
+            <time th:text="${shigaNorth.shiganorthDate}"></time>
+            <div class="text location_info"><span th:text="${shiganorthContent.contentName}"></span></div>
+	        <div class="text content_info"><span th:text="${shiganorthContent.info}"></span></div>
+         </a>
+       </il>
+      </ul>
+    </div>
+    <!-- 京都北部情報 -->
+    <div class="news">
+      <h1>京都北部新着情報</h1>
+      <ul th:each="kyotoNorth:${kyotonorthlist}">
+        <li>
+          <a th:href="${kyotoNorth.kyotonorthUrl}">
+            <time th:text="${kyotoNorth.kyotonorthDate}"></time>
+            <div class="text location_info"><span th:text="${kyotonorthContent.contentName}"></span></div>
+	        <div class="text content_info"><span th:text="${{kyotonorthContent.info}"></span></div>
+         </a>
+       </il>
+      </ul>
+    </div>
+    <!-- 大阪北部情報 -->
+    <div class="news">
+      <h1>大阪北部新着情報</h1>
+      <ul th:each="osakaNorth:${osakanorthlist}">
+        <li>
+          <a th:href="${osakaNorth.osakanorthUrl}">
+            <time th:text="${osakaNorth.osakanorthDate}"></time>
+            <div class="text location_info"><span th:text="${osakanorthContent.contentName}"></span></div>
+	        <div class="text content_info"><span th:text="${osakanorthContent.info}"></span></div>
+         </a>
+       </il>
+      </ul>
+    </div>
+  </div>
+
+  <!-- サイドメニュー -->
