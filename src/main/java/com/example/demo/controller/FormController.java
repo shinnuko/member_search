@@ -62,9 +62,9 @@ public class FormController {
 				// 日付を 月/日 のフォーマットに変換
 				SimpleDateFormat sdf = new SimpleDateFormat("GGGGy年 M月 d日 (E) a h時 m分 s秒");
 				content.setContentDate(sdf.format(bord.getPosted_at()));
-			if(bord.getBord_id() == SHIGA_NORTH_NO) {
+			if(bord.getBoard_id() == SHIGA_NORTH_NO) {
 				shiganorthContentList.add(content);
-			} else if (bord.getBord_id() == KYOTO_NORTH_NO) {
+			} else if (bord.getBoard_id() == KYOTO_NORTH_NO) {
 				kyotonorthContentList.add(content);
 			} else {
 				osakanorthContentList.add(content);

@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="ja">
-<form action="form_html" method="POST">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="バンドメンバー募集,バンド関西,滋賀バンド,大阪バンド,社会人バンドライブ,コピーバンド,初心者バンド,ボーカル,Gt,京都バンド,兵庫バンド" />
+<title>メンバー募集サービス</title>
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="メンバー募集/制作/運営 しんぬこが管理する、関西でバンド活動するなら。社会人バンド、コピーバンド、プロ志向、アマ問いません。" />
 
-お名前 <input type="textbox" name="u_name" maxlength="20"><br>
-件名 <input type="textbox" name="subject" maxlength="40"><br>
-内容 <textarea name="comment"></textarea><br>
-<input type="submit" value="送信"><input type="reset" VALUE="書き直し">
-</form>
 
-<a href="http://blue-ms.com/">滋賀南部のおすすめスタジオ</a>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126289985-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126289985-2');
+</script>
+<script>
+$(function(){
+	$("#menubtn").click(function(){
+		$("#menu").slideToggle();
+	});
+
+});
+</script>
+</head>
+<body>
+  <!--
+  <header class="discription-header">
+    <p>関西限定バンドメンバー募集掲示板「しんぬこ掲示板」</p>
+  </header>
+  -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-site">
+        <div class="site">
+  	  <h1>
+	    <a href="http://localhost:8080/"><img src="img/logo-header.jpg" alt="ライブ出演検索サービスのロゴ" width="250" height="33"></a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="header-nav">
+        <button type="button" id="menubtn">
+	  <i class="fa fa-bars"></i><span>MENU</span>
+        </button>
+        <nav class="menu" id="menu">
+	  <ul>
+	    <li><a href="http://localhost:8080/">トップ</a></li>
+	    <li><!a href="http://mohanak.com/about/" target="blank">事業紹介</a></li>
+	    <li><!a href="http://mohanak.com/contact/" target="blank">お問い合わせ</a></li>
+	  </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+ <div class="photo">
+    <div class="top">
+      <img src="img/top.jpg" alt="ライブ出演検索サービスのロゴ" class="topimg">
+    </div>
+  </div>
 
 <div class="info">
   <div class="info-main">
@@ -52,5 +111,63 @@
       </ul>
     </div>
   </div>
-
   <!-- サイドメニュー -->
+  <div class="info-sub">
+    <div class="follow">
+      <ul>
+	<!--
+	<li>
+          <div class="gaiyou">
+            <a href="http://35.213.2.106/search.php">
+              <i class="fa fa-music side-music"></i>
+              <h1>メンバー募集検索はこちら</h1>
+              <p>様々な条件から検索が可能です。</p>
+            </a>
+          </div>
+	</li>
+	-->
+
+	<li>
+          <div class="gaiyou">
+            <a href="http://localhost:8080/search">
+              <img class="search_img" alt="ライブ出演検索導線" src="img/search.jpg" />
+              <p>様々な条件から検索が可能です。</p>
+            </a>
+          </div>
+	</li>
+
+	<p class="follow-info">管理人へのお問い合わせはこちら</p>
+        <li>
+          <a href="https://twitter.com/home" class="follow-tw">
+	    <i class="fa fa-fw fa-twitter"></i>
+	    Twitter
+	  </a>
+        </li>
+	<li>
+          <a href="https://www.facebook.com/" class="follow-fb">
+	    <i class="fa fa-fw fa-facebook"></i>
+	    Facebook
+	  </a>
+        </li>
+	<li>
+	  <a href="http://shinnuko.xsrv.jp/" class="follow-mohanak">
+	    <i><img class="side-img" alt="M運営会社ロゴ" src="img/mohanak.jpg" /></i>
+	    管理人ブログ
+	  </a>
+	</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+	<div class="copyright">
+	<p>Copyright &copy; MOHANAK</p>
+	</div>
+</div>
+</footer>
+
+
+</body>
+</html>

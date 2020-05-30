@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="board_contents")
+@Table(name="boards_contents")
 public class BordDto {
 
 	// 投稿番号
@@ -21,7 +21,7 @@ public class BordDto {
 
 	// 掲示板ID
 	@Column
-	private int bord_id;
+	private int board_id;
 
 	// 投稿内容
 	@Column
@@ -49,12 +49,12 @@ public class BordDto {
 		this.post_no = post_no;
 	}
 
-	public int getBord_id() {
-		return bord_id;
+	public int getBoard_id() {
+		return board_id;
 	}
 
-	public void setBord_id(int bord_id) {
-		this.bord_id = bord_id;
+	public void setBoard_id(int board_id) {
+		this.board_id = board_id;
 	}
 
 	public String getContent() {
