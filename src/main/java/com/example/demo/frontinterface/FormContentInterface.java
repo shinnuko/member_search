@@ -11,8 +11,14 @@ public class FormContentInterface {
 
 	// 投稿タイトル
 	private String ContentName;
+	
+	// 文言
+    private String info;
 
 	
+	public void setInfo(String info) {
+		this.info = info;
+	}
 
 	public String getContenttUrl() {
 		return ContenttUrl;
@@ -36,6 +42,10 @@ public class FormContentInterface {
 
 	public void setContentName(String contentName) {
 		ContentName = contentName;
+	}
+
+	public String getInfo() {
+		return info;
 	}
 
 	

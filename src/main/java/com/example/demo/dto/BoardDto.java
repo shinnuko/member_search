@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="boards_contents")
-public class BordDto {
+public class BoardDto {
 
 	// 投稿番号
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,7 +38,7 @@ public class BordDto {
 
 	// 投稿ユーザーID
 	@Column
-	private Date posted_user_id;
+	private int posted_user_id;
 
 	
 	public int getpost_no() {
@@ -85,7 +85,7 @@ public class BordDto {
 		return posted_at;
 	}
 
-	public void setPosted_user_id(Date posted_user_id) {
+	public void setPosted_user_id(int posted_user_id) {
 		this.posted_user_id = posted_user_id;
 	}
 	
