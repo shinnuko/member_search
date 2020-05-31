@@ -55,10 +55,8 @@ public class FormController {
 			    FormContentInterface content = new FormContentInterface();
 
 			    // ⑦ 各値を設定していく
-				content.setContenttUrl("http://localhost:8080/info?eventcd=" + board.getpost_no());
-				content.setContentName(board.getContent());
-
-
+				content.setContenttUrl("http://localhost:8080/info?contentcd=" + board.getpost_no());
+                content.setContentName(board.getContent());
 				// 日付を 月/日 のフォーマットに変換
 				SimpleDateFormat sdf = new SimpleDateFormat("GGGGy年 M月 d日 (E) a h時 m分 s秒");
 				content.setContentDate(sdf.format(board.getPosted_at()));
@@ -72,9 +70,9 @@ public class FormController {
 		}
 
 		// ④ HTML（フロント）に渡す
-		model.addAttribute("shiganorthList", shiganorthContentList);
-		model.addAttribute("kyotonorthList", kyotonorthContentList);
-		model.addAttribute("osakanorthList", osakanorthContentList);
+		model.addAttribute("shiganorthcontentList", shiganorthContentList);
+		model.addAttribute("kyotonorthcontentList", kyotonorthContentList);
+		model.addAttribute("osakanorthcontentList", osakanorthContentList);
 
 		// ⑤ 表示するHTML を選択
 		return "form";
