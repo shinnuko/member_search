@@ -74,10 +74,10 @@ $(function(){
     <!-- 滋賀北部情報 -->
     <div class="news">
       <h1>滋賀北部新着情報</h1>
-      <ul th:each="shiganorthContent:${shiganorthcontentlist}">
+       <ul th:each="shiganorthContent:${shiganorthContentList}">
         <li>
-          <a th:href="${shiganorthContent.contentUrl}">
-            <time th:text="${shigaNorthContent.contentDate}"></time>
+          <a th:href="${shiganorthContent.ContentUrl}">
+            <time th:text="${shigaNorthContent.ContentDate}"></time>
             <div class="text location_info"><span th:text="${shiganorthContent.contentName}"></span></div>
 	       
          </a>
@@ -87,10 +87,10 @@ $(function(){
     <!-- 京都北部情報 -->
     <div class="news">
       <h1>京都北部新着情報</h1>
-      <ul th:each="kyotonorthContent:${kyotonorthcontentlist}">
+      <ul th:each="kyotonorthContent:${kyotonorthContentList}">
         <li>
-          <a th:href="${kyotonorthContent.kyotonorthcontentUrl}">
-            <time th:text="${kyotonorthContent.contentDate}"></time>
+          <a th:href="${kyotonorthContent.ContentUrl}">
+            <time th:text="${kyotonorthContent.ContentDate}"></time>
             <div class="text location_info"><span th:text="${kyotonorthContent.contentName}"></span></div>
 	       
          </a>
@@ -100,10 +100,10 @@ $(function(){
     <!-- 大阪北部情報 -->
     <div class="news">
       <h1>大阪北部新着情報</h1>
-      <ul th:each="osakanorthContent:${osakanorthcontentlist}">
+      <ul th:each="osakanorthContent:${osakanorthContentList}">
         <li>
-          <a th:href="${osakanorthContent.osakanorthcontentUrl}">
-            <time th:text="${osakanorthComtent.osakanorthcontentDate}"></time>
+          <a th:href="${osakanorthContent.ContentUrl}">
+            <time th:text="${osakanorthComtent.ContentDate}"></time>
             <div class="text location_info"><span th:text="${osakanorthContent.contentName}"></span></div>
 	      
          </a>

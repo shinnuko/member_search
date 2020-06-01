@@ -3,7 +3,7 @@ package com.example.demo.frontinterface;
 public class FormContentInterface {
 
 	// イベント詳細URL
-    private String ContenttUrl;
+    private String ContentUrl;
 
 
 	// 日付表示
@@ -21,11 +21,11 @@ public class FormContentInterface {
 	}
 
 	public String getContenttUrl() {
-		return ContenttUrl;
+		return ContentUrl;
 	}
 
 	public void setContenttUrl(String contenttUrl) {
-		ContenttUrl = contenttUrl;
+		ContentUrl = contenttUrl;
 	}
 
 	public String getContentDate() {
