@@ -21,9 +21,9 @@ import com.example.demo.frontinterface.FormContentInterface;
 public class FormController {
 
 	// 各掲示板の番号を定義
-		int SHIGA_NORTH_NO = 0;
-		int KYOTO_NORTH_NO = 1;
-		int OSAKA_NORTH_NO = 2;
+		int SHIGA_SOUTH_NO = 1;
+		int KYOTO_SOUTH_NO = 3;
+		int OSAKA_SOUTH_NO = 5;
 
 
 		@Autowired
@@ -39,13 +39,13 @@ public class FormController {
 
 		// ② トップに出す滋賀北部、京都北部、大阪北部のイベント情報を保持するリストを作成する
 		// 滋賀北部のメンバー募集情報
-		ArrayList<FormContentInterface> shiganorthContentList = new ArrayList<>();
+		ArrayList<FormContentInterface> shigasouthContentList = new ArrayList<>();
 
 		// 京都北部のメンバー募集情報
-		ArrayList<FormContentInterface> kyotonorthContentList = new ArrayList<>();
+		ArrayList<FormContentInterface> kyotosouthContentList = new ArrayList<>();
 
 		// 大阪北部のメンバー募集情報
-		ArrayList<FormContentInterface> osakanorthContentList = new ArrayList<>();
+		ArrayList<FormContentInterface> osakasouthContentList = new ArrayList<>();
 
 
 		// ③ 取得したイベント情報をもとに②で作成したリストに格納
@@ -60,19 +60,19 @@ public class FormController {
 				// 日付を 月/日 のフォーマットに変換
 				SimpleDateFormat sdf = new SimpleDateFormat("GGGGy年 M月 d日 (E) a h時 m分 s秒");
 				content.setContentDate(sdf.format(board.getPosted_at()));
-			if(board.getBoard_id() == SHIGA_NORTH_NO) {
-				shiganorthContentList.add(content);
-			} else if (board.getBoard_id() == KYOTO_NORTH_NO) {
-				kyotonorthContentList.add(content);
+			if(board.getBoard_id() == SHIGA_SOUTH_NO) {
+				shigasouthContentList.add(content);
+			} else if (board.getBoard_id() == KYOTO_SOUTH_NO) {
+				kyotosouthContentList.add(content);
 			} else {
-				osakanorthContentList.add(content);
+				osakasouthContentList.add(content);
 			}
 		}
 
 		// ④ HTML（フロント）に渡す
-		model.addAttribute("shiganorthcontentList", shiganorthContentList);
-		model.addAttribute("kyotonorthcontentList", kyotonorthContentList);
-		model.addAttribute("osakanorthcontentList", osakanorthContentList);
+		model.addAttribute("shigasouthcontentList", shigasouthContentList);
+		model.addAttribute("kyotosouthcontentList", kyotosouthContentList);
+		model.addAttribute("osakasouthcontentList", osakasouthContentList);
 
 		// ⑤ 表示するHTML を選択
 		return "form";

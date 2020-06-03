@@ -73,39 +73,39 @@ $(function(){
   <div class="info-main">
     <!-- 滋賀北部情報 -->
     <div class="news">
-      <h1>滋賀北部新着情報</h1>
-       <ul th:each="shiganorthContent:${shiganorthContentList}">
+      <h1>滋賀南部新着情報</h1>
+       <ul th:each="shigasouthContent:${shigasouthcontentlist}">
         <li>
-          <a th:href="${shiganorthContent.ContentUrl}">
-            <time th:text="${shigaNorthContent.ContentDate}"></time>
-            <div class="text location_info"><span th:text="${shiganorthContent.contentName}"></span></div>
-	       
+          <a th:href="${shigasouthContent.ContentUrl}">
+            <time th:text="${shigaSouthContent.ContentDate}"></time>
+            <div class="text title_name"><span th:text="${shigasouthContent.contentName}"></span></div>
+            <div class="text write_info"><span th:text="${shigasouthContent.info}"></span></div>
          </a>
        </il>
       </ul>
     </div>
     <!-- 京都北部情報 -->
     <div class="news">
-      <h1>京都北部新着情報</h1>
-      <ul th:each="kyotonorthContent:${kyotonorthContentList}">
+      <h1>京都南部新着情報</h1>
+      <ul th:each="kyotosouthContent:${kyotosouthcontentlist}">
         <li>
-          <a th:href="${kyotonorthContent.ContentUrl}">
-            <time th:text="${kyotonorthContent.ContentDate}"></time>
-            <div class="text location_info"><span th:text="${kyotonorthContent.contentName}"></span></div>
-	       
+          <a th:href="${kyotosouthContent.ContentUrl}">
+            <time th:text="${kyotosouthContent.ContentDate}"></time>
+            <div class="text title_name"><span th:text="${kyotosouthContent.contentName}"></span></div>
+            <div class="text write_info"><span th:text="${kyotosouthContent.info}"></span></div>
          </a>
        </il>
       </ul>
     </div>
     <!-- 大阪北部情報 -->
     <div class="news">
-      <h1>大阪北部新着情報</h1>
-      <ul th:each="osakanorthContent:${osakanorthContentList}">
+      <h1>大阪南部新着情報</h1>
+      <ul th:each="osakasouthContent:${osakasouthcontentlist}">
         <li>
-          <a th:href="${osakanorthContent.ContentUrl}">
-            <time th:text="${osakanorthComtent.ContentDate}"></time>
-            <div class="text location_info"><span th:text="${osakanorthContent.contentName}"></span></div>
-	      
+          <a th:href="${osakasouthContent.ContentUrl}">
+            <time th:text="${osakasouthComtent.ContentDate}"></time>
+            <div class="text title_name"><span th:text="${osakasouthContent.contentName}"></span></div>
+            <div class="text write_info"><span th:text="${osakasouthContent.info}"></span></div>
          </a>
        </il>
       </ul>
