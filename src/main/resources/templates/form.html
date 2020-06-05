@@ -74,10 +74,10 @@ $(function(){
     <!-- 滋賀北部情報 -->
     <div class="news">
       <h1>滋賀南部新着情報</h1>
-       <ul th:each="shigasouthContent:${shigasouthcontentlist}">
+       <ul th:each="shigasouthContent:${shigasouthcontentList}">
         <li>
           <a th:href="${shigasouthContent.ContentUrl}">
-            <time th:text="${shigaSouthContent.ContentDate}"></time>
+            <time th:text="${shigasouthContent.ContentDate}"></time>
             <div class="text title_name"><span th:text="${shigasouthContent.contentName}"></span></div>
             <div class="text write_info"><span th:text="${shigasouthContent.info}"></span></div>
          </a>
@@ -87,7 +87,7 @@ $(function(){
     <!-- 京都北部情報 -->
     <div class="news">
       <h1>京都南部新着情報</h1>
-      <ul th:each="kyotosouthContent:${kyotosouthcontentlist}">
+      <ul th:each="kyotosouthContent:${kyotosouthcontentList}">
         <li>
           <a th:href="${kyotosouthContent.ContentUrl}">
             <time th:text="${kyotosouthContent.ContentDate}"></time>
@@ -100,10 +100,10 @@ $(function(){
     <!-- 大阪北部情報 -->
     <div class="news">
       <h1>大阪南部新着情報</h1>
-      <ul th:each="osakasouthContent:${osakasouthcontentlist}">
+      <ul th:each="osakasouthContent:${osakasouthcontentList}">
         <li>
           <a th:href="${osakasouthContent.ContentUrl}">
-            <time th:text="${osakasouthComtent.ContentDate}"></time>
+            <time th:text="${osakasouthContent.ContentDate}"></time>
             <div class="text title_name"><span th:text="${osakasouthContent.contentName}"></span></div>
             <div class="text write_info"><span th:text="${osakasouthContent.info}"></span></div>
          </a>
@@ -140,19 +140,19 @@ $(function(){
         <li>
           <a href="https://twitter.com/home" class="follow-tw">
 	    <i class="fa fa-fw fa-twitter"></i>
-	    Twitter
+	    しんぬこのTwitter
 	  </a>
         </li>
 	<li>
           <a href="https://www.facebook.com/" class="follow-fb">
 	    <i class="fa fa-fw fa-facebook"></i>
-	    Facebook
+	    しんぬこのFacebook
 	  </a>
         </li>
 	<li>
 	  <a href="http://shinnuko.xsrv.jp/" class="follow-mohanak">
 	    <i><img class="side-img" alt="M運営会社ロゴ" src="img/mohanak.jpg" /></i>
-	    管理人ブログ
+	    しんぬこブログ
 	  </a>
 	</li>
       </ul>

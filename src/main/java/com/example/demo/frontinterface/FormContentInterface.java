@@ -20,12 +20,12 @@ public class FormContentInterface {
 		this.info = info;
 	}
 
-	public String getContenttUrl() {
+	public String getContentUrl() {
 		return ContentUrl;
 	}
 
-	public void setContenttUrl(String contenttUrl) {
-		ContentUrl = contenttUrl;
+	public void setContentUrl(String contentUrl) {
+		ContentUrl = contentUrl;
 	}
 
 	public String getContentDate() {

@@ -55,7 +55,7 @@ public class FormController {
 			    FormContentInterface content = new FormContentInterface();
 
 			    // ⑦ 各値を設定していく
-				content.setContenttUrl("http://localhost:8080/info?contentcd=" + board.getpost_no());
+				content.setContentUrl("http://localhost:8080/info?contentcd=" + board.getpost_no());
                 content.setContentName(board.getContent());
 				// 日付を 月/日 のフォーマットに変換
 				SimpleDateFormat sdf = new SimpleDateFormat("GGGGy年 M月 d日 (E) a h時 m分 s秒");
