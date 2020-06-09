@@ -16,25 +16,24 @@ import com.example.demo.dto.CommentDto;
  * ShigasouthController
  */
 @Controller
-@RequestMapping("/shigasouth")
+@RequestMapping("/")
 
 public class ShigasouthController {
     @Autowired
     private CommentRepository commentRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/shigasouth", method = RequestMethod.GET)
     public String indexGet(ModelMap modelMap) {
         List<CommentDto> commentList = commentRepository.findAll();
         modelMap.addAttribute("commentList", commentList);
         return "shigasouth";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url,@RequestParam("posted_user_id") Integer posted_user_id) {
+    @RequestMapping(value = "/shigasouth", method = RequestMethod.POST)
+    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url) {
         CommentDto comment = new CommentDto();
         comment.setContent(content);
         comment.setHref_url(href_url);
-        comment.setPosted_user_id(posted_user_id);
         commentRepository.save(comment);
         return indexGet(modelMap);
     }

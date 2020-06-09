@@ -1,16 +1,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>BBS</title>
+    <title>滋賀南部メンバー募集</title>
 </head>
 <body>
-    <h1>各掲示板スレッドてすと</h1>
+    <h1>滋賀県南部スレッド</h1>
     <ol>
-        <li th:each="comment:${commentList}"><span th:text="${comment.name}">名前</span>: <span th:text="${comment.text}">テキスト</span></li>
+        <li th:each="comment:${commentList}"><span th:text="${comment.content}">内容</span>: <span th:text="${comment.href_url}">参照URL</span></li>
     </ol>
-    <form th:action="@{/shigasouth/}" method="post">
-        <input type="text" name="name" />
-        <input type="text" name="text" /><input type="submit" />
+    <form th:action="@{/shigasouth}" method="post">
+        <input type="text" name="content" />
+        <input type="text" name="href_url" /><input type="submit" />
     </form>
 </body>
 </html>
