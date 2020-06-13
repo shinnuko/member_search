@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +20,10 @@ import com.example.demo.dto.CommentDto;
 @RequestMapping("/")
 
 public class ShigasouthController {
-    @Autowired
+    
+	@Autowired
     private CommentRepository commentRepository;
+
 
     @RequestMapping(value = "/shigasouth", method = RequestMethod.GET)
     public String indexGet(ModelMap modelMap) {
@@ -30,12 +31,15 @@ public class ShigasouthController {
         modelMap.addAttribute("commentList", commentList);
         return "shigasouth";
     }
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime;
+
     @RequestMapping(value = "/shigasouth", method = RequestMethod.POST)
-    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url,@RequestParam("posted_at") String posted_at) {
+    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url) {
         CommentDto comment = new CommentDto();
+        System.out.println(posted_at);
         comment.setContent(content);
         comment.setHref_url(href_url);
+        // ここで現在日時を作成
+        Date posted_at = new Date(); 
         comment.setPosted_at(posted_at);
         commentRepository.save(comment);
         return indexGet(modelMap);
