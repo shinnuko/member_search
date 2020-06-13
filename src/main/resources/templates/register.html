@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="register.css">
+  <title>掲示板</title>
+</head>
+<body>
+  <header>
+    <div class="header-logo">
+    <!-- ① -->
+      <a href="login.php">掲示板</a>
+      <a class="header-right" href="login.java">ログイン</a>
+    </div>
+  </header>
+  <div class="container">
+    <p class="form-title">登録</p>
+  <!-- ② ③ -->
+    <form method="post">
+      <div class="form-parts">
+        <label>ユーザID</label>
+        <input type="text" name="user_id">
+      </div>
+      <div class="form-parts">
+        <label>パスワード</label>
+        <input type="password" name="password">
+      </div>
+      <div class="form-parts">
+        <label>表示名</label>
+        <input type="text" name="display_name">
+      </div>
+      <input class="form-btn" type="submit" value="登録">
+    </form> 
+  </div>
+</body>
+</html>

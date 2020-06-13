@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,14 +30,15 @@ public class ShigasouthController {
         modelMap.addAttribute("commentList", commentList);
         return "shigasouth";
     }
-
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime;
     @RequestMapping(value = "/shigasouth", method = RequestMethod.POST)
-    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url) {
+    public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url,@RequestParam("posted_at") String posted_at) {
         CommentDto comment = new CommentDto();
         comment.setContent(content);
         comment.setHref_url(href_url);
+        comment.setPosted_at(posted_at);
         commentRepository.save(comment);
         return indexGet(modelMap);
     }
+  }
 
-}

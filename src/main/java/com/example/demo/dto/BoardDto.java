@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class BoardDto {
 
 	// 投稿番号
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column
 	private int post_no;
@@ -26,7 +26,7 @@ public class BoardDto {
 	// 投稿内容
 	@Column
 	private String content;
-	
+
 	// 投稿URL
 	@Column
 	private String href_url;
@@ -40,7 +40,7 @@ public class BoardDto {
 	@Column
 	private int posted_user_id;
 
-	
+
 	public int getpost_no() {
 		return post_no;
 	}
@@ -80,7 +80,7 @@ public class BoardDto {
 	public void setPosted_at(Date posted_at) {
 		this.posted_at = posted_at;
 	}
-	
+
 	public Date getPosted_user_id() {
 		return posted_at;
 	}
@@ -88,5 +88,5 @@ public class BoardDto {
 	public void setPosted_user_id(int posted_user_id) {
 		this.posted_user_id = posted_user_id;
 	}
-	
+
 }

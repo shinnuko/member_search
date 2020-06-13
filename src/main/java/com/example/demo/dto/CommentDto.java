@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 public class CommentDto {
 	// 投稿番号
-		@GeneratedValue(strategy = GenerationType.AUTO)
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Id
 		@Column
 		private int post_no;
