@@ -1,5 +1,4 @@
 package com.example.demo.dto;
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -82,8 +81,8 @@ public class CommentDto {
 			this.posted_at = posted_at;
 		}
 		
-		public Date getPosted_user_id() {
-			return posted_at;
+		public int getPosted_user_id() {
+			return posted_user_id;
 		}
 
 		public void setPosted_user_id(int posted_user_id) {
