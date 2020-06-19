@@ -32,6 +32,7 @@ public class ShigasouthController {
     public String indexPost(ModelMap modelMap, @RequestParam("content") String content, @RequestParam("href_url") String href_url) {
         CommentDto comment = new CommentDto();
         Date posted_at = new Date();
+         
 		System.out.println(posted_at);
         comment.setContent(content);
         comment.setHref_url(href_url);
