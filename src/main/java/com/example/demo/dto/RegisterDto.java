@@ -8,8 +8,11 @@ import lombok.Data;
 
 public class RegisterDto implements Serializable {
 
-	private Integer user_id;
+
 	private String password;
     private String display_name;
+
+
+	
 
 }

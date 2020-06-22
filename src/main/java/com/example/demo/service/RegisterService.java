@@ -5,7 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.dao.RegisterRepository;
+import com.example.demo.dto.RegisterDto;
 import com.example.demo.dto.RegisterprocessDto;
 
 @Service
@@ -13,14 +19,38 @@ import com.example.demo.dto.RegisterprocessDto;
 
 public class RegisterService {
 	 @Autowired
-	 RegisterprocessDto registerprocessDto;
+	 RegisterRepository registerRepository;
 	 @Autowired
 	 PasswordEncoder passwordEncoder;
-	 
-	 public RegisterprocessDto create(RegisterprocessDto account, String rawPassword) {
+
+	 public RegisterprocessDto  create(RegisterprocessDto  registerprocessDto , String rawPassword) {
 	        String encodedPassword = passwordEncoder.encode(rawPassword);
-	        account.setPassword(encodedPassword);
-	        return registerprocessDto.save(account);
+	        registerprocessDto.setPassword(encodedPassword);
+	        return registerRepository.save(registerprocessDto);
 	    }
+	 
+	 @Autowired
+	 RegisterService registerService;
+
+	 @RequestMapping(value = "register", method = RequestMethod.POST)
+	 String create(@Validated RegisterDto form, BindingResult bindingResult) {
+	     if (bindingResult.hasErrors()) {
+	         return "register";
+	     }
+	     RegisterDto  register = new RegisterDto ();
+	     register.setDisplay_name(form.getDisplay_name());
+	     RegisterService.create(register, form.getPassword());
+	     return "redirect:register";
+	 }
+
+	 private static void create(RegisterDto register, String password) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@RequestMapping(value = "register", method = RequestMethod.GET)
+	 String createFinish() {
+	     return "register";
+	 }
 
 }

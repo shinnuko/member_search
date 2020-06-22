@@ -16,22 +16,24 @@ import lombok.Data;
 @Data
 
 public class RegisterprocessDto implements Serializable {
-	
+
 	@Id
     @GeneratedValue
     private Integer user_id;
- 
+
     @Column(nullable=false)
     private String display_name;
- 
+
     @Column(nullable=false, length=20)
     private String password;
- 
+
     @Column(nullable=false, updatable=false)
     private Date created_at;
- 
+
     @Column(nullable=false)
     private Date updated_at;
-	
+
+
+
 
 }
