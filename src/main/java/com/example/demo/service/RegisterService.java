@@ -32,25 +32,25 @@ public class RegisterService {
 	 @Autowired
 	 RegisterService registerService;
 
-	 @RequestMapping(value = "register", method = RequestMethod.POST)
+	 @RequestMapping(value = "/register", method = RequestMethod.POST)
 	 String create(@Validated RegisterDto form, BindingResult bindingResult) {
 	     if (bindingResult.hasErrors()) {
-	         return "register";
+	         return "registerDto";
 	     }
 	     RegisterDto  register = new RegisterDto ();
 	     register.setDisplay_name(form.getDisplay_name());
 	     RegisterService.create(register, form.getPassword());
-	     return "redirect:register";
+	     return "redirect:/complete";
 	 }
 
 	 private static void create(RegisterDto register, String password) {
-		// TODO 自動生成されたメソッド・スタブ
+		
 
 	}
 
-	@RequestMapping(value = "register", method = RequestMethod.GET)
+	@RequestMapping(value = "/complete", method = RequestMethod.GET)
 	 String createFinish() {
-	     return "register";
+	     return "accountcomplete";
 	 }
 
 }

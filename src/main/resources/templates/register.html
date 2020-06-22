@@ -8,29 +8,37 @@
 </head>
 <body>
   <header>
-   　<div class="header-logo">
+    <div class="header-logo">
     <!-- ① -->
-    　<a href="/">フォーム画面へ</a>
+      <a href="/">フォーム画面へ</a>
       <a class="header-right" href="/login/">ログイン</a>
     </div>
+   </header>
 
-
-
-  </header>
-  <div class="container">
-    <p class="form-title">しんぬこの掲示板にようこそ！利用規約を確認し、同意して頂いた上でのご利用をお願いします。</p>
-  <!-- ② ③ -->
-    <form method="post">
-      <div class="form-parts">
-        <label>パスワード</label>
-        <input type="password" name="password">
-      </div>
-      <div class="form-parts">
-        <label>表示名</label>
-        <input type="text" name="display_name">
-      </div>
-      <input class="form-btn" type="submit" value="登録">
+<div>
+ 
+    <form th:action="@{/register}" action="/register" th:object="${registerDto}" method="post">
+ 
+        <h1>ユーザー登録</h1>
+ 
+        <div th:classappend="${#fields.hasErrors('email')}? 'has-error'">
+            <label for="email">E-mail</label>
+ 
+            <div>
+                <input id="email" type="email" th:field="*{email}" name="email"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error!</span>
+            </div>
+        </div>
+        <div th:classappend="${#fields.hasErrors('password')}? 'has-error'">
+            <label for="password">パスワード</label>
+ 
+            <div>
+                <input id="password" type="password" th:field="*{password}" name="password"/>
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error!</span>
+            </div>
+        </div>
+        <input type="submit" value="新規登録"/>
     </form>
-  </div>
+</div>
 </body>
 </html>
