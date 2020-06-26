@@ -24,11 +24,11 @@ public class RegisterService {
 	 PasswordEncoder passwordEncoder;
 
 	 public RegisterprocessDto  create(RegisterprocessDto  registerprocessDto , String rawPassword) {
-	        String encodedPassword = passwordEncoder.encode(rawPassword);
+		 String encodedPassword = passwordEncoder.encode(rawPassword);
 	        registerprocessDto.setPassword(encodedPassword);
 	        return registerRepository.save(registerprocessDto);
 	    }
-	 
+
 	 @Autowired
 	 RegisterService registerService;
 
@@ -44,7 +44,7 @@ public class RegisterService {
 	 }
 
 	 private static void create(RegisterDto register, String password) {
-		
+
 
 	}
 

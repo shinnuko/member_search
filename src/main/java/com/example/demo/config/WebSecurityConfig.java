@@ -25,10 +25,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/register/").permitAll()
 	        .antMatchers("/thread/").permitAll() // /thread以下のURLも認証不要
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
-
-
-
+	    
+	    
 	}
+
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {

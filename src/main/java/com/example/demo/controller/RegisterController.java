@@ -17,7 +17,7 @@ public class RegisterController {
 
 	@RequestMapping(value="register")
 	public String registerDto() {
-		return "registerDto";
+		return "register";
 	}
 
 }
