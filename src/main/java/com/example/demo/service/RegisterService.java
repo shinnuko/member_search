@@ -29,28 +29,24 @@ public class RegisterService {
 	        return registerRepository.save(registerprocessDto);
 	    }
 
-	 @Autowired
-	 RegisterService registerService;
+	
 
-	 @RequestMapping(value = "/register", method = RequestMethod.POST)
+	 @RequestMapping(value = "/register/", method = RequestMethod.POST)
 	 String create(@Validated RegisterDto form, BindingResult bindingResult) {
 	     if (bindingResult.hasErrors()) {
-	         return "registerDto";
+	    	 return "registerDto";
 	     }
-	     RegisterDto  register = new RegisterDto ();
-	     register.setDisplay_name(form.getDisplay_name());
-	     RegisterService.create(register, form.getPassword());
+	     RegisterprocessDto  registerprocessDto = new RegisterprocessDto ();
+	     RegisterService registerService = new RegisterService ();
+	     registerprocessDto.setName(form.getName());
+	     registerService.create(registerprocessDto, form.getPassword());
 	     return "redirect:/complete";
 	 }
 
-	 private static void create(RegisterDto register, String password) {
-
-
-	}
-
+	
 	@RequestMapping(value = "/complete", method = RequestMethod.GET)
 	 String createFinish() {
-	     return "accountcomplete";
+	     return "accountComplete";
 	 }
 
 }

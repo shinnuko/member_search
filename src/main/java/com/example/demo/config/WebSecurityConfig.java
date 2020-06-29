@@ -15,6 +15,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		 // セキュリティ設定を無視するリクエスト設定
+        // 静的リソースに対するアクセスはセキュリティ設定を無視する
 	    web.ignoring().antMatchers("/","/css/**", "/datepicker/**", "/img/**");
 	}
 
@@ -26,6 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/thread/").permitAll() // /thread以下のURLも認証不要
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
 	    
+	       
 	    
 	}
 
