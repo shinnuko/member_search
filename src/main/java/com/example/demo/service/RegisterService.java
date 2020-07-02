@@ -29,12 +29,12 @@ public class RegisterService {
 	        return registerRepository.save(registerprocessDto);
 	    }
 
-	
+
 
 	 @RequestMapping(value = "/register/", method = RequestMethod.POST)
 	 String create(@Validated RegisterDto form, BindingResult bindingResult) {
 	     if (bindingResult.hasErrors()) {
-	    	 return "registerDto";
+	    	 return "/register/";
 	     }
 	     RegisterprocessDto  registerprocessDto = new RegisterprocessDto ();
 	     RegisterService registerService = new RegisterService ();
@@ -43,7 +43,7 @@ public class RegisterService {
 	     return "redirect:/complete";
 	 }
 
-	
+
 	@RequestMapping(value = "/complete", method = RequestMethod.GET)
 	 String createFinish() {
 	     return "accountComplete";

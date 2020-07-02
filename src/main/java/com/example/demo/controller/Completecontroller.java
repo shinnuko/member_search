@@ -4,12 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ThreadController {
+
+public class Completecontroller {
 	
-	 @RequestMapping("/thread")
-    public String thread() {
+	@RequestMapping("/complete")
+    public String complete() {
     	
-	    	return "thread";
+	    	return "complete";
 	}
 
 }
