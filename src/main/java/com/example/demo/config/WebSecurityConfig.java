@@ -25,10 +25,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    http.authorizeRequests() // 認証が必要となるURLを設定します
 	        .antMatchers("/login/").permitAll() // /loginFormは認証不要
 	        .antMatchers("/register/").permitAll()
-	        .antMatchers("/thread/").permitAll() // /thread以下のURLも認証不要
+	        .antMatchers("/thread/").permitAll() // /threadURLも認証不要
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
 	    
-	    
+	 
 	}
 
 

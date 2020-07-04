@@ -1,17 +1,15 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("login")
 
 public class LoginController {
-	
-	 @RequestMapping("/login")
-	    public String showLoginForm(Model model) {
 
-	        //ログイン画面へ遷移。
+	 @RequestMapping(value="")
+	    String login() {
 	        return "login";
 	    }
 

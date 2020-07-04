@@ -6,4 +6,5 @@ import com.example.demo.dto.RegisterprocessDto;
 
 
 public interface RegisterRepository extends JpaRepository<RegisterprocessDto, Integer> {
+	
 }
