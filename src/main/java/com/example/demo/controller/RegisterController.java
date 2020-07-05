@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -14,7 +15,9 @@ import com.example.demo.service.RegisterService;
 @Controller
 
 public class RegisterController {
-
+	
+	@Autowired
+    RegisterService registerService;
 
 
 	@ModelAttribute
@@ -34,7 +37,7 @@ public class RegisterController {
 	    	 return "/register/";
 	     }
 	     RegisterprocessDto  registerprocessDto = new RegisterprocessDto ();
-	     RegisterService registerService = new RegisterService ();
+	    // RegisterService registerService = new RegisterService ();
 	     registerprocessDto.setName(form.getName());
 	     registerService.create(registerprocessDto, form.getPassword());
 	     return "redirect:/complete";
