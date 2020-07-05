@@ -23,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	    http.authorizeRequests() // 認証が必要となるURLを設定します
-	        .antMatchers("/login/").permitAll() // /loginFormは認証不要
+	        .antMatchers("/login/**").permitAll() // /loginFormは認証不要
 	        .antMatchers("/register/").permitAll()
 	        .antMatchers("/thread/").permitAll() // /threadURLも認証不要
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
