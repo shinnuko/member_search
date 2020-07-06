@@ -26,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/login/**").permitAll() // /loginFormは認証不要
 	        .antMatchers("/register/").permitAll()
 	        .antMatchers("/thread/").permitAll() // /threadURLも認証不要
+	        .antMatchers("/complete").permitAll()
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
 	    
 	 
