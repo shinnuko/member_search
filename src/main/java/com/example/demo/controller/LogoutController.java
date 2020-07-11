@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 
-
-public class LoginController {
-	@RequestMapping("/login")
-
-	    String login() {
-	        return "login";
-	    }
+public class LogoutController {
+	
+	@RequestMapping("/logout")
+    public String logout() {
+    	
+	    	return "logout";
+	}
 
 }

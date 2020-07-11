@@ -11,15 +11,15 @@ import com.example.demo.dao.RegisterRepository;
 @Component
 
 public class JpaUserDetailsServiceImpl implements UserDetailsService {
-	 
+
     @Autowired
     private RegisterRepository registerRepository;
- 
+
     @Override
     public UserDetails loadUserByUsername(String name)
             throws UsernameNotFoundException {
- 
-    	RegisterprocessDto registerprocessDto = registerRepository.findByName(name);
-        return registerprocessDto;
+
+    	Register register = registerRepository.findByName(name);
+        return register;
     }
 }
