@@ -33,7 +33,7 @@ public class Register implements UserDetails {
     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return  null;
     }
 
     /* (非 Javadoc)
