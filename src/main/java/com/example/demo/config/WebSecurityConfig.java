@@ -23,12 +23,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		 // セキュリティ設定を無視するリクエスト設定
         // 静的リソースに対するアクセスはセキュリティ設定を無視する
-	    web.ignoring().antMatchers("/","/css/**", "/datepicker/**", "/img/**");
+	    web.ignoring().antMatchers("/css/**", "/datepicker/**", "/img/**");
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	http.authorizeRequests() // 認証が必要となるURLを設定します
+	        .antMatchers("/").permitAll()
 	        .antMatchers("/login/**").permitAll() // /loginは認証不要
 	        .antMatchers("/register/").permitAll()
 	        .antMatchers("/thread/").permitAll() // /threadURLも認証不要
@@ -36,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .anyRequest().authenticated(); // それ以外はすべて認証された状態じゃなきゃダメ
 
 	http.formLogin()
-	    .loginProcessingUrl("/login/") // 認証処理を起動させるパス
+	    .loginProcessingUrl("/login_process") // 認証処理を起動させるパス
 	    .loginPage("/login/") // ログインフォームのパス
 	    .failureUrl("/login/?error") // ログイン処理失敗時の遷移先
 	    .defaultSuccessUrl("/") // 認証成功時の遷移先

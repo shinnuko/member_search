@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dao.RegisterRepository;
+import com.example.demo.dto.Register;
 import com.example.demo.dto.RegisterprocessDto;
 
 @Service
@@ -18,10 +19,12 @@ public class RegisterService {
 	 @Autowired
 	 PasswordEncoder passwordEncoder;
 
-	 public RegisterprocessDto  create(RegisterprocessDto  registerprocessDto , String rawPassword) {
-		 String encodedPassword = passwordEncoder.encode(rawPassword);
-	        registerprocessDto.setPassword(encodedPassword);
-	        return registerRepository.save(registerprocessDto);
+	  public void create(RegisterprocessDto registerprocessDto , String rawPassword) {
+	        String encodedPassword = passwordEncoder.encode(rawPassword);
+	        Register register = new Register();
+	        register.setName(registerprocessDto.getName());
+	        register.setPassword(encodedPassword);
+	        registerRepository.save(register);
 	    }
 
 
