@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>滋賀南部メンバー募集</title>
+    <title>大阪南部メンバー募集</title>
 </head>
 <body>
-    <h1>滋賀県南部スレッド</h1>
+    <h1>大阪南部スレッド</h1>
     <ol>
         <li th:each="comment:${commentList}"><span th:text="${comment.content}">内容</span>: <span th:text="${comment.href_url}">参照URL</span> </li>
     </ol>
-    <form th:action="@{/shigasouth}" method="post">
+    <form th:action="@{/osakasouth}" method="post">
         <p>詳細記入欄:<br>
         <textarea name="content" cols="100" rows="20">
 【タイトル】
