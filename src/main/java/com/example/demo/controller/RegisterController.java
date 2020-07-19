@@ -15,7 +15,7 @@ import com.example.demo.service.RegisterService;
 @Controller
 
 public class RegisterController {
-	
+
 	@Autowired
     RegisterService registerService;
 
@@ -30,14 +30,13 @@ public class RegisterController {
 	public String registerDto() {
 		return "register";
 	}
-	
+
 	@RequestMapping(value = "/register/", method = RequestMethod.POST)
 	 String create(@Validated RegisterDto form, BindingResult bindingResult) {
 	     if (bindingResult.hasErrors()) {
 	    	 return "/register/";
 	     }
 	     RegisterprocessDto  registerprocessDto = new RegisterprocessDto ();
-	    // RegisterService registerService = new RegisterService ();
 	     registerprocessDto.setName(form.getName());
 	     registerService.create(registerprocessDto, form.getPassword());
 	     return "redirect:/complete";

@@ -22,11 +22,9 @@ public class RegisterprocessDto implements Serializable {
     private Integer user_id;
 
     @Column(nullable=false)
-
     private String name;
 
     @Column(nullable=false, length=20)
-
     private String password;
 
 }

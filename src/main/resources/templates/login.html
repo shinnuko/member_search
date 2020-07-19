@@ -6,6 +6,9 @@
 <title>ログイン</title>
 </head>
 <body>
+<form role="form" id="logout" th:action="@{/logout}" method="post">
+    <button type="submit">ログアウト</button>
+</form>
 <form th:action="@{/login_process}" method="POST">
 
     <table align="center">

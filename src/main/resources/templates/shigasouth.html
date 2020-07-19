@@ -1,3 +1,4 @@
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
@@ -9,8 +10,32 @@
         <li th:each="comment:${commentList}"><span th:text="${comment.content}">内容</span>: <span th:text="${comment.href_url}">参照URL</span> </li>
     </ol>
     <form th:action="@{/shigasouth}" method="post">
-        <input type="text" name="content" />
-        <input type="text" name="href_url" /><input type="submit" />
+        <p>詳細記入欄:<br>
+        <textarea name="content" cols="100" rows="20">
+【タイトル】
+        
+【募集or加入】
+        
+【募集or加入希望パート】
+        
+【オリジナルorコピー】
+        
+【メインの活動曜日】
+        
+【メンバー構成】
+        
+【その他コメント！】
+        
+         
+        
+        </textarea>
+        <p>連絡先（SNSアカウントやメールアドレス等）:<br>
+        <textarea name="href_url" cols="50" rows="1"></textarea>
+         
+        <input type="submit" />
+      
+
+        <a href="/">フォーム画面へ</a>
     </form>
 </body>
 </html>
