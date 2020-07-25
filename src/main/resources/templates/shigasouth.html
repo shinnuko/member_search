@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
+     <link rel="stylesheet" th:href="@{/css/register.css}">
     <title>滋賀南部メンバー募集</title>
 </head>
-<body>
     <h1>滋賀県南部スレッド</h1>
+     
     <ol>
         <li th:each="comment:${commentList}"><span th:text="${comment.content}">内容</span>: <span th:text="${comment.href_url}">参照URL</span> </li>
     </ol>

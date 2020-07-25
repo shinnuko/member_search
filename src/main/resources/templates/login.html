@@ -3,9 +3,16 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+ <link rel="stylesheet" th:href="@{/css/register.css}">
 <title>ログイン</title>
 </head>
 <body>
+  <header>
+    <div class="header-logo">
+      <a href="/">フォーム画面へ</a>
+      <a class="header-right" href="/register/">新規登録へ</a>
+    </div>
+   </header>
 <form role="form" id="logout" th:action="@{/logout}" method="post">
     <button type="submit">ログアウト</button>
 </form>
@@ -38,10 +45,7 @@
         <tr>
             <td>
             </td>
-            <td align="right">
-                <a href="/register/">新規登録へ</a>
-                <a href="/">フォーム画面へ</a>
-            </td>
+           
         </tr>
     </table>
 </form>

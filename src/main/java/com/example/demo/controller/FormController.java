@@ -37,14 +37,14 @@ public class FormController {
 		List<BoardDto> boardInfoList = boardDao.findAll();
 
 
-		// ② トップに出す滋賀北部、京都北部、大阪北部のイベント情報を保持するリストを作成する
-		// 滋賀北部のメンバー募集情報
+		// ② トップに出す滋賀南部、京都南部、大阪南部のイベント情報を保持するリストを作成する
+		// 滋賀南部のメンバー募集情報
 		ArrayList<FormContentInterface> shigasouthContentList = new ArrayList<>();
 
-		// 京都北部のメンバー募集情報
+		// 京都南部のメンバー募集情報
 		ArrayList<FormContentInterface> kyotosouthContentList = new ArrayList<>();
 
-		// 大阪北部のメンバー募集情報
+		// 大阪南部のメンバー募集情報
 		ArrayList<FormContentInterface> osakasouthContentList = new ArrayList<>();
 
 
