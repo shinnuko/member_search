@@ -78,8 +78,8 @@ RegisterController register.htmlのController
 RegisterDto　formからPOSTされた時に値を受け取るクラス  
 RegisterprocessDto　usersテーブルのEntityクラス  
 RegisterRepository　Registerのインターフェース  
-RegisterService    　　
-ユーザー登録のサービスクラス　リポジトリをimportし、保存処理　パスワードハッシュ化　コントローラにPOSTされた時の処理    
+RegisterService  
+ユーザー登録のサービスクラス　リポジトリをimportし、保存処理　パスワードハッシュ化　コントローラにPOSTされた時の処理  
 WebSecurityConfig  Spring Securityを利用するにあたり、「WebSecurityConfigurerAdapter」を継承して認証設定をしているクラス  
 RegisterRepository  RegisterprocessDtoのインターフェース  
 login.html　ログイン画面のViewFile  
